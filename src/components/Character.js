@@ -36,7 +36,7 @@ function Character(props) {
           I am <br></br>
           {human.name}
         </h1>
-        <h4 onClick={stats}>Player Stats</h4>
+        <h4 onClick={stats}>Player Stats | click |</h4>
         {show ? <PlayerStats more={human} /> : null}
       </Div>
     );
