@@ -13,16 +13,17 @@ function Character(props) {
 
   //I know that this portion isn't perfect, but it's a start!
   function PlayerStats(more) {
-    console.log(more);
+    // console.log(more);
+    const moreData = more.more;
     return (
       <>
         <p>{more.more.gender}</p>
-        <p>Birth Year ~ {more.more.birth_year}</p>
-        <p>Hair Color ~ {more.more.hair_color}</p>
-        <p>Eye Color ~ {more.more.eye_color}</p>
-        <p>Height ~ {more.more.height} cm</p>
-        <p>Mass ~ {more.more.mass} kg</p>
-        <Homeworld home={more.more.homeworld} />
+        <p>Birth Year ~ {moreData.birth_year}</p>
+        <p>Hair Color ~ {moreData.hair_color}</p>
+        <p>Eye Color ~ {moreData.eye_color}</p>
+        <p>Height ~ {moreData.height} cm</p>
+        <p>Mass ~ {moreData.mass} kg</p>
+        <Homeworld home={moreData.homeworld} />
       </>
     );
   }
