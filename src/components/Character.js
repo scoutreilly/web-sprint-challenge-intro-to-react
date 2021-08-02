@@ -4,7 +4,9 @@ import React from "react";
 
 function Character(props) {
   console.log(props);
-  const characterList = props.map((human) => {
+  const propDeconstructed = props.props;
+  console.log(propDeconstructed);
+  const characterList = propDeconstructed.map((human) => {
     return (
       <div>
         <h1>hello</h1>
