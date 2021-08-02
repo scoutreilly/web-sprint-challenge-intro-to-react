@@ -81,6 +81,10 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+   -- React is a code base that is used for single page applications. It uses State to rerender the information on your page super quick and efficiently. It keeps track of data and changes to data for you, and makes the appropriate changes in the UI.
 1. Describe component state.
+   -- State is cool because it can manage whatever you'd like. For example if you use State on an object, it is being monitered by react. Any changes to that data, and react will re render and run whatever the appropriate code is for you. Kind of like an event listener, by way more slick.
 1. Describe props.
+   -- Props are kind of like attributes. Keys and values used when building components. They can be tied into functions, logic and even styles.
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+   -- Side effects are used to manage data, or whatever else is needed. They can be triggered to run code depending on the dependencies array that is pased to the useEffect.
