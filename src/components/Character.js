@@ -1,12 +1,31 @@
 // Write your Character component here
 
 import React from "react";
+import { useState } from "react";
 import Homeworld from "./Homeworld.js";
 import Div from "./Div.js";
 
 function Character(props) {
   // console.log(props);
   const propDeconstructed = props.props;
+  const [show, setShow] = useState(false);
+  const stats = () => setShow(true);
+
+  //I know that this portion isn't perfect, but it's a start!
+  function PlayerStats(more) {
+    console.log(more);
+    return (
+      <>
+        <p>{more.more.gender}</p>
+        <p>Birth Year ~ {more.more.birth_year}</p>
+        <p>Hair Color ~ {more.more.hair_color}</p>
+        <p>Eye Color ~ {more.more.eye_color}</p>
+        <p>Height ~ {more.more.height} cm</p>
+        <p>Mass ~ {more.more.mass} kg</p>
+        <Homeworld home={more.more.homeworld} />
+      </>
+    );
+  }
   // console.log(propDeconstructed);
   // this is mindblowing, deconstructing props here allows me to map them because it actually exists as an array
   const characterList = propDeconstructed.map((human) => {
@@ -16,14 +35,8 @@ function Character(props) {
           I am <br></br>
           {human.name}
         </h1>
-        <h4>Player Stats</h4>
-        <p>{human.gender}</p>
-        <p>Birth Year ~ {human.birth_year}</p>
-        <p>Hair Color ~ {human.hair_color}</p>
-        <p>Eye Color ~ {human.eye_color}</p>
-        <p>Height ~ {human.height} cm</p>
-        <p>Mass ~ {human.mass} kg</p>
-        <Homeworld home={human.homeworld} />
+        <h4 onClick={stats}>Player Stats</h4>
+        {show ? <PlayerStats more={human} /> : null}
       </Div>
     );
   });
